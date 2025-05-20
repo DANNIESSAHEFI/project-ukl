@@ -1,0 +1,243 @@
+:root {
+    --primary: #333;
+    --secondary: #575757;
+    --bg-light: #f7f7f7;
+    --accent: #ff4b4b;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    padding-top: 80px;
+  }
+  
+  header {
+    background-color: var(--primary);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background 0.3s;
+    border-radius: 5px;
+  }
+  
+  .menu a:hover {
+    background-color: var(--secondary);
+  }
+  
+  .toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  /* Versi default (desktop) tetap tampil tabel */
+.jadwal-wrapper .jadwal-piket {
+  display: table;
+  width: 100%;
+}
+
+/* Mobile: ubah tampilannya jadi lebih simpel */
+@media (max-width: 768px) {
+  .jadwal-wrapper .jadwal-piket,
+  .jadwal-wrapper .jadwal-piket thead,
+  .jadwal-wrapper .jadwal-piket tbody,
+  .jadwal-wrapper .jadwal-piket th,
+  .jadwal-wrapper .jadwal-piket td,
+  .jadwal-wrapper .jadwal-piket tr {
+    display: block;
+    width: 100%;
+  }
+
+  .jadwal-wrapper .jadwal-piket thead {
+    display: none;
+  }
+
+  .jadwal-wrapper .jadwal-piket td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+  }
+
+  .jadwal-wrapper .jadwal-piket td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary);
+  }
+}
+
+  section {
+    padding: 40px 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-content h3 {
+    margin-bottom: 10px;
+    color: var(--primary);
+  }
+  
+  .struktur-kelas, .baris {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .kartu {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 140px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .kartu img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .jadwal-piket {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .jadwal-piket .card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Mobile (maksimal 768px) ubah jadi vertikal */
+  @media (max-width: 768px) {
+    .jadwal-piket {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  .container{
+    padding: 20px;
+  }
+  footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--primary);
+      margin-top: 10px;
+    }
+  
+    .menu.show {
+      display: flex;
+    }
+  
+    .toggle {
+      display: block;
+    }
+  
+    .baris {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .kartu {
+      width: 90%;
+    }
+  }
+  
